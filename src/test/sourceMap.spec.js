@@ -3,7 +3,7 @@ import { SourceMapConsumer } from 'source-map'
 import ProcessPool from 'process-pool'
 
 import { positionOf } from '../sourceMap'
-import Bacon from 'sigh/lib/bacon'
+import Bacon from '../bacon'
 import Event from 'sigh/lib/Event'
 import concat from 'sigh/lib/plugin/concat'
 import babel from 'sigh/lib/plugin/babel'
