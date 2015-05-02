@@ -1,6 +1,6 @@
 {
   "name": "sigh-core",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Library for sigh and sigh plugins.",
   "main": "index",
   "directories": {
@@ -36,8 +36,8 @@
     "lodash": "^3.8.0",
     "mocha": "^2.2.1",
     "process-pool": "^0.3.1",
-    "sigh": "^0.10.5",
+    "sigh": "^0.11.0",
     "sigh-cli": "^0.2.1",
-    "sigh-mocha": "0.0.2"
+    "sigh-mocha": "0.0.3"
   }
 }
