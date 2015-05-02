@@ -36,6 +36,8 @@ describe('sourceMap helper module', () => {
 
     var inputStream = Bacon.constant([1, 2].map(num => makeEvent(num)))
     var concatStream = concat({ stream: inputStream }, 'output.js', 10)
+    // TODO: this should be instantiated with sigh's module path otherwise
+    //       the dependencies the babel plugin needs won't be available.
     var procPool = new ProcessPool
     var babelStream = babel({ stream: concatStream, procPool })
 
