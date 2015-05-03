@@ -83,10 +83,7 @@ export function positionOf(haystack, needle) {
     return null
 
   var line = 1, lineOffset = 0, nextLineOffset = haystack.indexOf('\n')
-  for(;;) {
-    if (nextLineOffset > index)
-      break
-
+  while (nextLineOffset <= index && nextLineOffset !== -1) {
     lineOffset = nextLineOffset
     ++line
     nextLineOffset = haystack.indexOf('\n', lineOffset + 1)
