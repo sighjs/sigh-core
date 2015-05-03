@@ -29,6 +29,12 @@ describe('sourceMap helper module', () => {
       var pos = positionOf('111\n222\n3a\n14', 'b')
       should.not.exist(pos)
     })
+
+    it('returns line/column of match on first line', () => {
+      var pos = positionOf('function hey(){return 14}var a=1;', 'var')
+      pos.line.should.equal(1)
+      pos.column.should.equal(25)
+    })
   })
 
   it('applies one source map to another', function() {
