@@ -12,6 +12,7 @@ export function apply(sourceMap, applicator) {
   var applCons = new SourceMapConsumer(applicator)
 
   var generator = SourceMapGenerator.fromSourceMap(applCons)
+  // TODO: use the default (applicator.file) instead of applicator.sources[0]
   generator.applySourceMap(cons, applicator.sources[0])
 
   return generator.toJSON()
