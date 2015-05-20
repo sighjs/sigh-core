@@ -1,6 +1,6 @@
 {
   "name": "sigh-core",
-  "version": "0.11.4",
+  "version": "0.11.5",
   "description": "Library for sigh and sigh plugins.",
   "main": "index",
   "directories": {
@@ -27,13 +27,13 @@
     "baconjs": "^0.7.53",
     "bluebird": "^2.9.25",
     "esprima": "^2.1.0",
+    "lodash": "^3.9.1",
     "source-map": "^0.4.0"
   },
   "devDependencies": {
     "babel": "^5.0.8",
     "chai": "^2.2.0",
     "grunt": "^0.4.5",
-    "lodash": "^3.8.0",
     "mocha": "^2.2.1",
     "process-pool": "^0.3.1",
     "sigh": "^0.11.0",
