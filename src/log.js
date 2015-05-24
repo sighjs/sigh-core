@@ -11,4 +11,15 @@ log.warn = (format, ...args) => {
   console.warn(` ${color}!${clear} ${format}`, ...args)
 }
 
+log.important = (format, ...args) => {
+  var text = util.format(format, ...args)
+  var lines = ''
+  for (var i = 0; i < text.length + 7; ++i)
+    lines += '*'
+
+  console.log(` ${color}*${lines}`)
+  console.log(` ${color}***${clear} ${text} ${color}***`)
+  console.log(` ${color}*${lines}`)
+}
+
 export default log
