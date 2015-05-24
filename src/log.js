@@ -7,6 +7,10 @@ var log = (format, ...args) => {
   console.log(` ${color}*${clear} ${format}`, ...args)
 }
 
+log.nested = (format, ...args) => {
+  console.log(`   ${color}-${clear} ${format}`, ...args)
+}
+
 log.warn = (format, ...args) => {
   console.warn(` ${color}!${clear} ${format}`, ...args)
 }
