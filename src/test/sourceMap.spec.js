@@ -6,7 +6,7 @@ import { positionOf } from '../sourceMap'
 import Bacon from '../bacon'
 import Event from 'sigh/lib/Event'
 import concat from 'sigh/lib/plugin/concat'
-import babel from 'sigh/lib/plugin/babel'
+import babel from 'sigh-babel'
 
 var should = require('chai').should()
 
