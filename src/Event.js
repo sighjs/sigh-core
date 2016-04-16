@@ -29,8 +29,9 @@ export default class {
       return
 
     this.createTime = fields.createTime
-
-    this.data = fields.data !== undefined ? fields.data : readFileSync(this.path).toString()
+    
+    this.encoding = fields.encoding
+    this.data = fields.data != undefined ? fields.data : readFileSync(this.path).toString(fields.encoding)
     this.sourceData = this.data
 
     if (fields.sourceMap)
