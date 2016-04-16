@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs'
 import { join as pathJoin } from 'path'
 import { apply as sourceMapApply, generateIdentitySourceMap } from './sourceMap'
+import _ from 'lodash'
 
 var sourceMapRegex = /^\/[\/*]# sourceMappingURL=.*(\*\/)?/
 
@@ -122,9 +123,12 @@ export default class {
 
     var { _sourceMap } = this
     if (! _sourceMap)
-      this._sourceMap = sourceMap
+      this._sourceMap = _.cloneDeep(sourceMap)
     else
       this._sourceMap = sourceMapApply(_sourceMap, sourceMap)
+
+    if (! this._sourceMap.sources)
+      this._sourceMap.sources = [this.sourcePath]
   }
 
   get supportsSourceMap() {
