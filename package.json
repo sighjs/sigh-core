@@ -1,6 +1,6 @@
 {
   "name": "sigh-core",
-  "version": "0.11.9",
+  "version": "0.11.10",
   "description": "Library for sigh and sigh plugins.",
   "main": "index",
   "directories": {
