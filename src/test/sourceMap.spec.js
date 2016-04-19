@@ -2,7 +2,7 @@ import Promise from 'bluebird'
 import { SourceMapConsumer } from 'source-map'
 import ProcessPool from 'process-pool'
 
-import { positionOf } from '../sourceMap'
+import { positionOf, generateIdentitySourceMap } from '../sourceMap'
 import Bacon from '../bacon'
 import Event from 'sigh/lib/Event'
 import concat from 'sigh/lib/plugin/concat'
@@ -34,6 +34,13 @@ describe('sourceMap helper module', () => {
       var pos = positionOf('function hey(){return 14}var a=1;', 'var')
       pos.line.should.equal(1)
       pos.column.should.equal(25)
+    })
+  })
+
+  describe('generateIdentitySourceMap', () => {
+    it('generates identity source map for js file', () => {
+      var map = generateIdentitySourceMap('js', 'file.js', 'var i; i = 5')
+      map.mappings.should.equal('AAAA,IAAI,CAAC,EAAE,EAAE,EAAE')
     })
   })
 

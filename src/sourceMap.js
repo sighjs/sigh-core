@@ -59,19 +59,23 @@ export function concatenate(sourceMaps, offsets) {
  * @return {Object} identity source map.
  */
 export function generateIdentitySourceMap(sourceType, sourcePath, data) {
+  let tokens
   if (sourceType === 'js') {
-    var generator = new SourceMapGenerator({ file: path.basename(sourcePath) })
-    var tokens = esprima.tokenize(data, { loc: true })
-    tokens.forEach(function(token) {
-      var loc = token.loc.start
-      generator.addMapping({ generated: loc, original: loc, source: sourcePath })
-    })
-    return generator.toJSON()
+    tokens = esprima.tokenize(data, { loc: true })
   }
   else if (sourceType === 'css') {
-    // TODO:
-    return {}
+    // TODO: set tokens
   }
+
+  if (! tokens)
+    return {}
+
+  const generator = new SourceMapGenerator({ file: path.basename(sourcePath) })
+  tokens.forEach(function(token) {
+    var loc = token.loc.start
+    generator.addMapping({ generated: loc, original: loc, source: sourcePath })
+  })
+  return generator.toJSON()
 }
 
 /**
