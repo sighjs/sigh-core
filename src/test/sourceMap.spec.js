@@ -4,7 +4,7 @@ import ProcessPool from 'process-pool'
 
 import { positionOf, generateIdentitySourceMap } from '../sourceMap'
 import Bacon from '../bacon'
-import Event from 'sigh/lib/Event'
+import { Event } from 'sigh-core'
 import concat from 'sigh/lib/plugin/concat'
 import babel from 'sigh-babel'
 
