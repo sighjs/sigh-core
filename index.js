@@ -1,5 +1,5 @@
 exports.log = require('./lib/log').default
-exports.sourceMap = require('./lib/sourceMap').default
-exports.Bacon = require('./lib/bacon').default
-exports.stream = require('./lib/stream').default
+exports.sourceMap = require('./lib/sourceMap')
+exports.Bacon = require('./lib/bacon')
+exports.stream = require('./lib/stream')
 exports.Event = require('./lib/Event').default
